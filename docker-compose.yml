@@ -31,7 +31,7 @@ services:
     container_name: ejercicios
     hostname: ejercicios
     volumes:
-      - ./data/ejercicios:/var/www/html
+      - ./data/ejerciciosphp:/var/www/html
     depends_on:
       - db
     environment:
@@ -52,21 +52,6 @@ services:
     networks:
       - frontend
       - backend
-  web3:
-    build: ./dockerfiles/introduccionphp
-    container_name: web3
-    hostname: web3
-    volumes:
-      - ./data/web3:/var/www/html
-    depends_on:
-      - db
-    environment:
-      - VIRTUAL_HOST=web3.local,www.web3.local
-    restart: always
-    networks:
-      - frontend
-      - backend
-
 networks:
   frontend:
   backend:
